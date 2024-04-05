@@ -12,8 +12,7 @@ jobs:
         with:
           python-version-file: pyproject.toml
 
-      - uses: BrandonLWhite/pipx-install-action
+      - uses: BrandonLWhite/pipx-install-action@v0.1.1
 
-      - run: |
-          poetry install
-          poetry run pytest
+      - run: poetry install
+      - run: poetry run pytest
