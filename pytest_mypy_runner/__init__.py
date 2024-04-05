@@ -1,0 +1,1 @@
+from .mypy_test_runner import test_mypy
