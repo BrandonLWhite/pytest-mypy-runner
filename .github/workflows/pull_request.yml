@@ -1,0 +1,19 @@
+name: Pull Request
+on:
+  pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+
+      - uses: BrandonLWhite/pipx-install-action
+
+      - run: |
+          poetry install
+          poetry run pytest
