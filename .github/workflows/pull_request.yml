@@ -15,4 +15,8 @@ jobs:
       - uses: BrandonLWhite/pipx-install-action@v0.1.1
 
       - run: poetry install
-      - run: poetry run pytest
+      - run: poe test
+
+      - uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: coverage.xml
