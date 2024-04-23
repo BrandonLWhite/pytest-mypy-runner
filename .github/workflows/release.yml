@@ -1,4 +1,4 @@
-name: Pull Request
+name: Release
 on:
   release:
     types: [created]
@@ -20,6 +20,8 @@ jobs:
 
       - run: poetry install
       - run: poe test
-      - run: poetry verison ${{ github.ref_name }}
+      - run: poetry version ${{ github.ref_name }}
       - run: poetry build
 
+      - name: Publish distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
