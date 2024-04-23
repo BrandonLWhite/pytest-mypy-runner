@@ -15,5 +15,5 @@ Note:  The `# noqa` is there to prevent formatters/linters like autoflake from r
 unused import.
 
 ## Configuration
-The nearest `pyproject.toml` file will be used to configured mypy, traversing upward from the folder where test_mypy.py
+The nearest `pyproject.toml` file will be used to configure mypy, traversing upward from the folder where test_mypy.py
 resides.  Add any custom configuration to the `[tool.mypy]` section.
